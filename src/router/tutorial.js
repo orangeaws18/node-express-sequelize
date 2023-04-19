@@ -1,9 +1,11 @@
+const express = require("express");
 const db = require('../../db');
 
 const Tutorial = db.models.Tutorial;
 
-exports.create = (req, res) => {
+const router = express.Router();
 
+router.post("/", (req, res, next) => {
     const tutorial = {
         title: req.body.title,
         description: req.body.description,
@@ -14,14 +16,15 @@ exports.create = (req, res) => {
         .then(data => {
             res.send(data)
         })
-}
+})
 
-exports.findAll = (req, res) => {
-
+router.get("/", (req, res, next) => {
     const condition = null;
 
     Tutorial.findAll({ where: condition })
         .then(data => {
             res.send(data)
         })
-}
+})
+
+module.exports = router

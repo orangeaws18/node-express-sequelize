@@ -15,6 +15,10 @@ class User extends Sequelize.Model {
             timestamps: false
         });
     }
+
+    static associate(models) {
+        User.hasMany(models.Task, { as: 'tasks', foreignKey: 'user_id'})
+    }
 }
 
 module.exports = User
