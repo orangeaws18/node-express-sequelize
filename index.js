@@ -1,5 +1,7 @@
 const express = require('express');
 const tutorialRouter = require('./src/router/tutorial');
+const userRouter = require('./src/router/user');
+const taskRouter = require('./src/router/task');
 
 const app = express();
 
@@ -20,6 +22,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use('/tutorial', tutorialRouter);
+app.use('/user', userRouter);
+app.use('/task', taskRouter);
 
 app.listen(PORT, () => {
     console.log(`API 服務啟動在端口 ${PORT}`)
