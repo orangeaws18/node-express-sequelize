@@ -1,0 +1,19 @@
+{
+  "name": "node-express-sequelize",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:orangeaws18/node-express-sequelize.git",
+  "author": "chris.kuo <chris.kuo@beyondcars.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.3",
+    "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
