@@ -26,4 +26,12 @@ router.get("/", (req, res, next) => {
         })
 })
 
+router.get("/:taskId", (req, res, next) => {
+    Task.findByPk(req.params.taskId, { include: ['User']})
+        .then(data => {
+            res.send(data)
+
+        })
+})
+
 module.exports = router
