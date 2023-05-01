@@ -21,6 +21,14 @@ class Tutorial extends Sequelize.Model {
             timestamps: false
         });
     }
+
+    static associate(models) {
+        Tutorial.belongsToMany(models.Tag, {
+            through: 'tutorial_tag',
+            as: 'tags',
+            foreignKey: 'tutorial_id'
+        })
+    }
 }
 
 module.exports = Tutorial

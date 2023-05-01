@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const Tutorial = require('./model/tutorial');
 const User = require('./model/user');
 const Task = require('./model/task');
+const Tag = require('./model/tag');
 
 const sequelize = new Sequelize('orange', 'db_admin', 'beyondcars123', {
     host: 'localhost',
@@ -19,7 +20,8 @@ db.sequelize = sequelize;
 const models = {
     Tutorial: Tutorial.init(sequelize),
     User: User.init(sequelize),
-    Task: Task.init(sequelize)
+    Task: Task.init(sequelize),
+    Tag: Tag.init(sequelize)
 }
 
 Object.values(models)
